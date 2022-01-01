@@ -1114,7 +1114,7 @@ end
 if text == 'تحديث السورس ❏' and DevRAWANW(msg) then 
 os.execute('rm -rf RAWAN.lua')
 os.execute('wget https://raw.githubusercontent.com/RAWANTEAM/RAWAN/master/RAWAN.lua')
-send(msg.chat_id_, msg.id_,' *❏ : تم تحديث السورس* \n*❏ : لديك اخر اصدار لسورس كارلوس*\n*❏ : الاصدار » { 2.8v}*')
+send(msg.chat_id_, msg.id_,' *❏ : تم تحديث السورس* \n*❏ : لديك اخر اصدار لسورس روان*\n*❏ : الاصدار » { 2.8v}*')
 dofile('RAWAN.lua')  
 end
 if text == 'الاصدار ❏' and DevRAWANW(msg) then 
@@ -2313,7 +2313,7 @@ end
 if text == 'تحديث السورس' and DevRAWANW(msg) then 
 os.execute('rm -rf RAWAN.lua')
 os.execute('wget https://raw.githubusercontent.com/RAWANTEAM/RAWAN/master/RAWAN.lua')
-send(msg.chat_id_, msg.id_,' *❏ : تم تحديث السورس* \n*❏ : لديك اخر اصدار لسورس كارلوس*\n*❏ : الاصدار » { 2.8v}*')
+send(msg.chat_id_, msg.id_,' *❏ : تم تحديث السورس* \n*❏ : لديك اخر اصدار لسورس روان*\n*❏ : الاصدار » { 2.8v}*')
 dofile('RAWAN.lua')  
 end
 if text and text:match("^تغير الاشتراك$") and DevRAWANW(msg) then  
@@ -2648,7 +2648,7 @@ GetFile_Bot(msg)
 end
 if text == 'الاوامر المضافه' and Constructor(msg) then
 local list = database:smembers(bot_id..'List:Cmd:Group:New'..msg.chat_id_..'')
-t = " *❏ : قائمه الاوامر المضافه*  \n𓍹======𝘙𝘈𝘞𝘈𝘕======𓍻\n"
+t = " *❏ : قائمه الاوامر المضافه*  \n𓍹======𝘙??𝘞𝘈𝘕======𓍻\n"
 for k,v in pairs(list) do
 Cmds = database:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..':'..v)
 print(Cmds)
@@ -3777,7 +3777,7 @@ end,nil)
 end
 
 if text == 'الملفات' and DevRAWANW(msg) then
-t = ' *❏ : ملفات السورس كارلوس ↓*\n𓍹======𝘙𝘈𝘞𝘈𝘕======𓍻 \n'
+t = ' *❏ : ملفات السورس روان ↓*\n𓍹======𝘙𝘈𝘞𝘈𝘕======𓍻 \n'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
@@ -3795,7 +3795,7 @@ local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
 local TextS = "\n *❏ : اهلا بك في متجر ملفات روان*\n*❏ : ملفات السورس ↓*\n𓍹======𝘙𝘈𝘞𝘈𝘕======𓍻\n\n"
-local TextE = "\n𓍹======𝘙𝘈𝘞𝘈𝘕======𓍻\n *❏ : علامة تعني { ✓ } ملف مفعل*\n *❏ : علامة تعني { ✘ } ملف معطل*\n *❏ : قناة سورس كارلوس ↓*\n".." *❏ : *[اضغط هنا لدخول](t.me/CARLOSTEAMM) \n"
+local TextE = "\n𓍹======𝘙𝘈𝘞𝘈𝘕======𓍻\n *❏ : علامة تعني { ✓ } ملف مفعل*\n *❏ : علامة تعني { ✘ } ملف معطل*\n *❏ : قناة سورس روان ↓*\n".." *❏ : *[اضغط هنا لدخول](t.me/CARLOSTEAMM) \n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("File_Bot/"..name,"r")
@@ -3833,7 +3833,7 @@ os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
 dofile('RAWAN.lua')  
 else
-send(msg.chat_id_, msg.id_," *❏ : عذرا الملف لايدعم سورس كارلوس* \n") 
+send(msg.chat_id_, msg.id_," *❏ : عذرا الملف لايدعم سورس روان* \n") 
 end
 return false
 end
@@ -3855,7 +3855,7 @@ chek:close()
 send(msg.chat_id_, msg.id_,t) 
 dofile('RAWAN.lua')  
 else
-send(msg.chat_id_, msg.id_," *❏ : عذرا الملف لايدعم سورس كارلوس* \n") 
+send(msg.chat_id_, msg.id_," *❏ : عذرا الملف لايدعم سورس روان* \n") 
 end
 return false
 end
@@ -8335,7 +8335,7 @@ database:sadd(bot_id..'Spam:Texting'..msg.sender_user_id_,text)
 end  
 end
 end
-if text == ""..(database:get(bot_id..'Name:Bot') or 'كارلوس').." غادر" or text == 'غادر' then  
+if text == ""..(database:get(bot_id..'Name:Bot') or 'روان').." غادر" or text == 'غادر' then  
 if Sudo(msg) and not database:get(bot_id..'Left:Bot'..msg.chat_id_)  then 
 tdcli_function ({ID = "ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=bot_id,status_={ID = "ChatMemberStatusLeft"},},function(e,g) end, nil) 
 send(msg.chat_id_, msg.id_,'*❏ : تم مغادرة المجموعه*') 
@@ -8344,7 +8344,7 @@ end
 return false  
 end
 if text == 'بوت' then
-Namebot = (database:get(bot_id..'Name:Bot') or 'كارلوس')
+Namebot = (database:get(bot_id..'Name:Bot') or 'روان')
 send(msg.chat_id_, msg.id_,'*اسمي '..Namebot..'* ')
 end
 if text == 'الاحصائيات' then
@@ -10667,7 +10667,7 @@ if (text and text == "تفعيل اوامر التحشيش") then
 send(msg.chat_id_, msg.id_, '  *❏ : تم تفعيل اوامر التحشيش*')
 database:del(bot_id.."Fun_Bots:"..msg.chat_id_)
 end
-local Name_Bot = (database:get(bot_id..'Name:Bot') or 'كارلوس')
+local Name_Bot = (database:get(bot_id..'Name:Bot') or 'روان')
 if not database:get(bot_id.."Fun_Bots:"..msg.chat_id_) then
 if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then 
 function FunBot(extra, result, success) 
