@@ -9782,6 +9782,24 @@ https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. ms
 end
 end
 end
+if text == "تفعيل ريمكس" and Manager(msg) and ChCheck(msg) or text == "تفعيل الريمكس" and Manager(msg) and ChCheck(msg) then
+local RAWANTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تفعيل الريمكس'
+riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, AntakTeam, 14, string.len(msg.sender_user_id_))
+DevRio:del(Antak..'Rio:Remix:Rio'..msg.chat_id_) 
+end
+if text == "تعطيل ريمكس" and Manager(msg) and ChCheck(msg) or text == "تعطيل الريمكس" and Manager(msg) and ChCheck(msg) then
+local AntakTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تعطيل الريمكس'
+riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, AntakTeam, 14, string.len(msg.sender_user_id_))
+DevRio:set(Antak..'Rio:Remix:Rio'..msg.chat_id_,true)  
+end
+if text and (text == "ريمكس" or text == "↫ ريمكس ᥀") and not DevRio:get(Antak..'Rio:Remix:Rio'..msg.chat_id_) and ChCheck(msg) then
+Rio = math.random(2,612); 
+local Text ='*᥀︙تم اختيار الريمكس لك*'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text="• مره اخرى •",callback_data="/remix:"..msg.sender_user_id_}},{{text = '• Antak Team •',url="t.me/CXRCX"}}} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..TokenBot..'/sendVoice?chat_id=' .. msg.chat_id_ .. '&voice=https://t.me/RemixDavid/'..Rio..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 if text == "شنو رئيك بهذا" or text == "شنو رئيك بهذ" then
 if not database:get(bot_id..'lock:add'..msg.chat_id_) then
 local texting = {"ادب سسز يباوع علي بنات ??🥺"," مو خوش ولد 😶","زاحف وما احبه 😾😹"}
