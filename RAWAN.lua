@@ -9782,17 +9782,8 @@ https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. ms
 end
 end
 end
-if text == "تفعيل ريمكس" and Manager(msg) and ChCheck(msg) or text == "تفعيل الريمكس" and Manager(msg) and ChCheck(msg) then
-local RAWANTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تفعيل الريمكس'
-riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, AntakTeam, 14, string.len(msg.sender_user_id_))
-DevRio:del(Antak..'Rio:Remix:Rio'..msg.chat_id_) 
-end
-if text == "تعطيل ريمكس" and Manager(msg) and ChCheck(msg) or text == "تعطيل الريمكس" and Manager(msg) and ChCheck(msg) then
-local AntakTeam = '᥀︙اهلا عزيزي ↫ '..RioRank(msg)..' \n᥀︙تم تعطيل الريمكس'
-riomoned(msg.chat_id_, msg.sender_user_id_, msg.id_, AntakTeam, 14, string.len(msg.sender_user_id_))
-DevRio:set(Antak..'Rio:Remix:Rio'..msg.chat_id_,true)  
-end
-if text and (text == "ريمكس" or text == "↫ ريمكس ᥀") and not DevRio:get(Antak..'Rio:Remix:Rio'..msg.chat_id_) and ChCheck(msg) then
+
+if text and (text == "ريمكس" or text == "↫ ريمكس ᥀") and not DevRio:get(BANDA..'Rio:Remix:Rio'..msg.chat_id_) and ChCheck(msg) then
 Rio = math.random(2,612); 
 local Text ='*᥀︙تم اختيار الريمكس لك*'
 keyboard = {}  
